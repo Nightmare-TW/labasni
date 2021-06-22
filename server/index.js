@@ -5,6 +5,8 @@ const User = require('../database/User.js');
 const { signupValidation, loginValidation } = require('../validation');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+// function to verify token in requests 
+const verify = require('./verifyToken.js');
 
 const app = express();
 const PORT = 3001;
@@ -60,7 +62,6 @@ app.post('/login', async (req, res) => {
 
   res.send('Logged in');
 });
-
 
 app.listen(PORT, () => {
     console.log(`listening on port ${PORT}`);
