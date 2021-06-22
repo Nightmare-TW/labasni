@@ -16,6 +16,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '..', 'src')));
 dotenv.config();
+
+app.get('/posts', (req, res) => {
+  Posts.find()
+  .then(data =>{
+    console.log(data);
+    res.send(data);
+  })
+  .catch(err => res.status(401).send(err));
+})
+
 //Validation Schema with Joi
 
 // Testing user create

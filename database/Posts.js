@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise;
 const postSchema = new mongoose.Schema({
   name: String,
   description: String,
-  imageUrl: String,
+  image: String,
   price: String,
   availability: String,
   brand: String,
