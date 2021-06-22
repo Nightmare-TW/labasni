@@ -22,7 +22,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "db:setup": "node database-mongodb/seed.js",
+    "db:setup": "node database/seed.js",
     "start:dev-server": "nodemon server/index.js"
   },
   "eslintConfig": {
