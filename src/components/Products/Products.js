@@ -3,12 +3,12 @@ import {Grid} from '@material-ui/core';
 import Product from './Product/Product';
 import useStyles from './productsStyle';
 
-const products =[
-    {id: 1, name: 'Shoes', description: 'Running shoes', price:'250 $', image: 'https://www.brooksrunning.com/dw/image/v2/aaev_prd/on/demandware.static/-/Sites-BrooksCatalog/default/dw1f1ad38f/images/ProductImages/120317/120317_050_l_WR.jpg?sw=900'},
-    {id: 2, name: 'T-shirt', description: 'Nike T-shirt', price:'170 $', image: 'https://www.brooksrunning.com/dw/image/v2/aaev_prd/on/demandware.static/-/Sites-BrooksCatalog/default/dw77137889/images/ProductImages/211089/211089_018_ma_WR.jpg?sw=900'}
-]
+// const products =[
+//     {id: 1, name: 'Shoes', description: 'Running shoes', price:'250 $', image: 'https://www.brooksrunning.com/dw/image/v2/aaev_prd/on/demandware.static/-/Sites-BrooksCatalog/default/dw1f1ad38f/images/ProductImages/120317/120317_050_l_WR.jpg?sw=900'},
+//     {id: 2, name: 'T-shirt', description: 'Nike T-shirt', price:'170 $', image: 'https://www.brooksrunning.com/dw/image/v2/aaev_prd/on/demandware.static/-/Sites-BrooksCatalog/default/dw77137889/images/ProductImages/211089/211089_018_ma_WR.jpg?sw=900'}
+// ]
 
-const Products = () => {
+const Products = ({ products }) => {
     const classes = useStyles();
     return(
     <main className={classes.content}>
