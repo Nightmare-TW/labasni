@@ -5,13 +5,14 @@ const User = require('../database/User.js');
 const { signupValidation, loginValidation } = require('../validation');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+var cors = require('cors');
 // function to verify token in requests 
 const verify = require('./verifyToken.js');
-
 const app = express();
 const PORT = 3001;
 const path = require('path');
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '..', 'src')));
