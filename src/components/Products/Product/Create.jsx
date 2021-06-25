@@ -18,7 +18,7 @@ function creating () {
          brand:brand ,
         category: category
     }
-    axios.post('/api/posts',obj).then((response) =>{
+    axios.post('/posts',obj).then((response) =>{
         console.log(response)
         console.log('created')
     })
@@ -26,7 +26,7 @@ function creating () {
 return (
     <div class="create">
   <div class="create-editor">
-    <h2>AUTHOR</h2>
+    <h2>ADD PRODUCT</h2>
     <form>
       <input class="create-input" type="text"  placeholder="Product name" onChange={(e) =>setname(e.target.value)}></input>
       <input class="create-input" type="text"  placeholder="description"onChange={(e) =>setdescription(e.target.value)}></input>
@@ -35,12 +35,10 @@ return (
       <input class="create-input" type="text"  placeholder="availability "onChange={(e) =>setavailability(e.target.value)}></input>
       <input class="create-input" type="text"  placeholder="brand "onChange={(e) =>setbrand(e.target.value)}></input>
       <input class="create-input" type="text"  placeholder="category "onChange={(e) =>setcategory(e.target.value)}></input>
-      <button class="create-submit-button" type="submit" onClick={() =>creating()}>Save product</button>
+      <button class="create-submit-button" type="submit" onSubmit={() =>creating()}>Save product</button>
     </form>
   </div>
-  <div class="create-preview">
-    <h2>PREVIEW</h2>
-  </div>
+
 </div>
 )}
 export default Create ;
