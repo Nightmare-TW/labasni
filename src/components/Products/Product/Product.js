@@ -1,18 +1,28 @@
 import React from 'react';
-import { Card, CardMedia, CardContent, CardActions, Typography, IconButton } from '@material-ui/core';
-import { AddShoppingCart } from '@material-ui/icons';
-import useStyles from './productStyle'
+import { Card, CardMedia, CardContent, Typography } from '@material-ui/core';
+import useStyles from './productStyle';
+import { useHistory } from "react-router-dom";
 
 const Product = ({ product }) => {
     const classes = useStyles();
+    const history = useHistory();
+
+    //to change the path history and navigate to the new path
+    const navigateProductDetails =(event)=>{
+        event.preventDefault();
+        history.push({
+            pathname: `/product/details/${product._id}`,
+            // state: { productId: 'test' }
+        });
+    }
 
 
     return (
         <Card className={classes.root}>
-            <CardMedia className={classes.media} image={product.image} title={product.name}/>
+            <CardMedia className={classes.media} image={product.image} title={product.name} onClick={navigateProductDetails}/>
             <CardContent>
                 <div>
-                    <Typography variant="h5" gutterBottom> {/* Typography is for text in material ui and variant is that text will take the type of a header and gutterBottom is that text will have a space at the bottom*/}
+                    <Typography variant="h5" gutterBottom  style={{cursor: 'pointer'}}> {/* Typography is for text in material ui and variant is that text will take the type of a header and gutterBottom is that text will have a space at the bottom*/}
                         {product.name}
                     </Typography>
                     <Typography variant="h5"> 
@@ -23,11 +33,6 @@ const Product = ({ product }) => {
                     {product.description}
                 </Typography>
             </CardContent>
-            <CardActions disableSpacing className={classes.CardActions}>
-                <IconButton aria-label="Add to Cart"> {/*the aria-label is for the user where the cart icon does not appear*/}
-                    <AddShoppingCart />
-                </IconButton>
-            </CardActions>
         </Card>
     )
 }

@@ -8,8 +8,12 @@ import useStyles from './productsStyle';
 //     {id: 2, name: 'T-shirt', description: 'Nike T-shirt', price:'170 $', image: 'https://www.brooksrunning.com/dw/image/v2/aaev_prd/on/demandware.static/-/Sites-BrooksCatalog/default/dw77137889/images/ProductImages/211089/211089_018_ma_WR.jpg?sw=900'}
 // ]
 
+
 const Products = ({ products }) => {
     const classes = useStyles();
+
+    
+
     return(
     <main className={classes.content}>
         <div className={classes.toolbar} />  {/*this div is for the height between the navbar and the products */}
@@ -17,7 +21,7 @@ const Products = ({ products }) => {
             {/* map throw the products */}
             {products.map((product) =>(
                 <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}> {/*xs, sm, md and lg are for responsive that the grid will take full width for mobile devices and for the others tat each device how many places out of 12 it will take*/}
-                    <Product product={product}/>
+                    <Product product={product} />
                 </Grid>
             ))}
         </Grid>

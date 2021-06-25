@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Products, Navbar } from './components';
+import { Products, Navbar, Create, ProductDetails, Container } from './components';
 import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
     axios.get('http://localhost:3001/posts')
     .then(result =>{
-      console.log(result.data);
+      // console.log(result.data);
       setProducts(result.data);
     })
     .catch(err =>{
@@ -16,19 +17,26 @@ function App() {
     })
   }, []);
 
+  
+
   return (
     <Router>
     <div>
       <Navbar />
       <Switch>
-        <Route exact path="/products">
+        <Route exact path="/landing">
+          <Container />
+        </Route>
+        <Route exact path="/">
           <Products products={products} />
         </Route>
-        {/* <Route exact path="/">
-
-        </Route> */}
+        <Route exact path="/product/details/:id">
+          <ProductDetails />
+        </Route>
+        <Route exact path="/posts">
+          <Create/>
+        </Route>
       </Switch>
-      
     </div>
 
     </Router>
