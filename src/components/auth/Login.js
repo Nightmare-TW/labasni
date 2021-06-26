@@ -5,7 +5,8 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
 // Styling
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme)=>({
+    toolbar: theme.mixins.toolbar,
     formStyle: {
         margin:"0px auto",
         padding: "30px",
@@ -15,7 +16,7 @@ const useStyles = makeStyles({
     spacing: {
         marginTop: "20px"
     }
-});
+}));
 
 
 const Login = () => {
@@ -54,6 +55,7 @@ const Login = () => {
 
     return (
         <div>
+            <div className={classes.toolbar} />
             <form
             className={ classes.formStyle }
             noValidate

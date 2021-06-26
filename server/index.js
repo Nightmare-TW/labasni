@@ -5,7 +5,7 @@ const User = require('../database/User.js');
 const { signupValidation, loginValidation } = require('../validation');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-var cors = require('cors');
+const cors = require('cors');
 // function to verify token in requests 
 const verify = require('./verifyToken.js');
 const app = express();
@@ -16,16 +16,32 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '..', 'src')));
+app.use(cors());
 dotenv.config();
 
+
+// getting the data from the database
 app.get('/posts', (req, res) => {
   Posts.find()
     .then(data => {
-      console.log(data);
       res.send(data);
     })
     .catch(err => res.status(401).send(err));
 })
+
+//getting the product by id
+app.get('/posts/:id', (req, res) =>{
+  let {id} = req.params;
+  Posts.findById(id)
+  .then(doc =>{
+    res.json(doc);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(404).send(err)
+  });
+})
+
 // Posting
 app.post('/posts', async (req, res) => {
   try {

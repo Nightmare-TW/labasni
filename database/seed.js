@@ -23,7 +23,7 @@ const samplePosts = [
   {
     name: 'Puma Peanuts',
     description: 'Inspired by the early 2000s look, the Air Max Genome adds a fresh face to the Air Max house. Its techy upper features a mixture of materials including sleek no-sew skins, airy mesh and durable plastic details. The low-profile, full-length Air unit adds comfort to match its sleek design that\'s sure to become your new favorite Air Max. This product is made with at least 20% recycled materials by weight.',
-    imageUrl: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/375740/02/sv01/fnd/IND/fmt/png/PUMA-x-PEANUTS-Shuffle-Kids\'-Shoes',
+    image: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/375740/02/sv01/fnd/IND/fmt/png/PUMA-x-PEANUTS-Shuffle-Kids\'-Shoes',
     price: '100 $',
     availability: '2 in Stock',
     brand: 'Puma',
