@@ -1,11 +1,12 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, Toolbar, Typography,Button } from '@material-ui/core';
 import logo from '../../assets/logo.png';
 import useStyles from './navbarStyle';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const classes = useStyles();
+   
     return (
        <>
             <AppBar position='fixed' className={classes.appBar} color='inherit'>
@@ -15,9 +16,15 @@ const Navbar = () => {
                         Labasni
                     </Typography>
                     <div className={classes.grow} />  {/*this div in the middle for the spacing in the nav bar*/}
-                    <div className={classes.button}>
-                        <Link to="/posts">Add a post</Link>    
-                    </div>
+                    <div className={classes.link}>
+                        <Link className={classes.button} to="/posts">Add a post</Link> 
+                        <Button className={classes.button} variant="contained" color="primary" component={Link} to="/signup">
+                            SignUp
+                        </Button>
+                        <Button className={classes.button} variant="contained" color="primary" component={Link} to="/login">
+                            Login
+                        </Button>
+                    </div>    
                 </Toolbar>
             </AppBar>
        </>

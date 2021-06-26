@@ -10,7 +10,7 @@ const ProductDetails = () => {
     const{id} = useParams();
     const users =[
             {id: 1, name: 'Mohsen Chkara7oms', phone: 58556231, e_mail:'mohsen@chkarahomes.com', location: 'Tunis centre ville'},
-            {id: 2, name: 'Mhamed Chkara7foul', phone: 58007233, e_mail:'mhamed@chkarafoul.com', location: 'Bardo'},
+            {id: 2, name: 'Mhamed Chkarafoul', phone: 58007233, e_mail:'mhamed@chkarafoul.com', location: 'Bardo'},
         ]
 
     useEffect(()=>{

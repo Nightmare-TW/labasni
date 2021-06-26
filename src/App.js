@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Products, Navbar, Create, ProductDetails, Container } from './components';
+import { Products, Navbar, Create, ProductDetails, Container, SignUp, Login } from './components';
 import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -35,6 +35,12 @@ function App() {
         </Route>
         <Route exact path="/posts">
           <Create/>
+        </Route>
+        <Route exact path="/signup">
+          <SignUp />
+        </Route>
+        <Route exact path="/login">
+          <Login />
         </Route>
       </Switch>
     </div>
