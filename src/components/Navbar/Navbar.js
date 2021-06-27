@@ -8,7 +8,7 @@ const Navbar = () => {
     const classes = useStyles();
     const handleLogout = () => {
         localStorage.clear();
-        window.alert('Logout Successfuly ! ')
+        window.alert('Logout Successfuly !')
     }
    
     return (

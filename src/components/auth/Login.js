@@ -39,7 +39,6 @@ const Login = () => {
             password,
         },config)
         .then((res) => {
-            console.log(res.data);
             const userRes = res.data;
 
             if (userRes) { // just if we find token we go to '/' path...

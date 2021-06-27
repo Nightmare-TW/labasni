@@ -41,16 +41,16 @@ const SignUp = () => {
            password,
        },config)
        .then((res) => {
-           console.log(res.data.user);
            const userRes = res.data;
-
+            
            if (userRes.user) { // if we find token (user:id) we change the path
                localStorage.setItem("token", userRes.user);
+               window.alert('Register Successfuly !')
                history.push('/')
-           } else {
-               console.log('Error')
            }
-       });
+       }).catch((err) => {
+           window.alert('Something Wrong')
+       })
    
     };
     return (
