@@ -105,7 +105,6 @@ app.post('/login', async (req, res) => {
   const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
   res.header('auth-token', token).send(token);
 
-  res.send('Logged in');
 });
 
 app.listen(PORT, () => {

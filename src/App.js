@@ -52,10 +52,10 @@ function App() {
         <Route exact path="/posts">
           <Create/>
         </Route>
-        <Route exact path="/signup">
+        <Route path="/signup">
           <SignUp />
         </Route>
-        <Route exact path="/login">
+        <Route path="/login">
           <Login />
         </Route>
       </Switch>
