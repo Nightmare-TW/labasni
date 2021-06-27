@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Typography, TextField, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import axios from 'axios';
@@ -20,10 +20,10 @@ const useStyles = makeStyles((theme)=>({
 
 
 const Login = () => {
+    let history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const classes = useStyles();
-    let history = useHistory();
 
 
     const handleLogin = (e) => {
@@ -45,8 +45,9 @@ const Login = () => {
             if (userRes) { // just if we find token we go to '/' path...
                 localStorage.setItem("token", userRes);
                 history.push('/')
+                window.alert(`Welcome You Login Successfuly ${email}`)
             } else {
-                console.log('Error')
+                window.alert('Try Again')
             }
         });
         setEmail("")
