@@ -6,6 +6,10 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const classes = useStyles();
+    const handleLogout = () => {
+        localStorage.clear();
+        window.alert('Logout Successfuly !')
+    }
    
     return (
        <>
@@ -23,6 +27,9 @@ const Navbar = () => {
                         </Button>
                         <Button className={classes.button} variant="contained" color="primary" component={Link} to="/login">
                             Login
+                        </Button>
+                        <Button className={classes.button} variant="contained" color="primary" onClick={handleLogout}>
+                            Logout
                         </Button>
                     </div>    
                 </Toolbar>
