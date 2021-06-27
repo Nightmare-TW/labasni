@@ -12,7 +12,7 @@ import clothes from '../../assets/clothes.png'; // Import using relative path
 //     }
 // };
 
-export default class Container extends React.Component{
+export default class Home extends React.Component{
     render(){
         return(
             <Paper src={clothes}>
