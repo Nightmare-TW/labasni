@@ -3,6 +3,7 @@ export { default as Products } from './Products/Products';
 export { default as Create } from './Create/Create';
 export { default as Product } from './Products/Product/Product';
 export { default as ProductDetails } from './Products/Product/ProductDetails';
-export { default as Container } from './LandingPage/Container';
+export { default as Home } from './LandingPage/Home';
 export { default as Login } from './auth/Login';
 export { default as SignUp } from './auth/SignUp';
+export { default as Drawer } from './Navbar/SideBar';

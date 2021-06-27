@@ -18,7 +18,7 @@ export default makeStyles((theme) => ({
     textDecoration: 'none',
   },
   image: {
-    marginRight: '10px',
+    marginLeft: theme.spacing(1),
   },
   link: {
     marginRight: theme.spacing(5),

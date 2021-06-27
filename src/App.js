@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Products, Navbar, Create, ProductDetails, Container, SignUp, Login } from './components';
+import { Products, Navbar, Create, ProductDetails, Home, SignUp, Login, Drawer } from './components';
 import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [search, setSearch] = useState("");
+  // const [searchResults, setSearchResults] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  
 
   useEffect(() => {
     axios.get('http://localhost:3001/posts')
@@ -17,15 +21,27 @@ function App() {
     })
   }, []);
 
+  //search function
+  useEffect(() => {
+    setFilteredProducts(
+      products.filter(product =>{
+        return product.name.toLowerCase()
+        .includes(search.toLowerCase())
+      }
+    )
+    )
+  },[search, products])
+  
   
 
   return (
     <Router>
     <div>
+      {/* <Drawer /> */}
       <Navbar />
       <Switch>
         <Route exact path="/landing">
-          <Container />
+          <Home />
         </Route>
         <Route exact path="/">
           <Products products={products} />
