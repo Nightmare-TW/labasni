@@ -40,7 +40,7 @@ const Products = (props) => {
                 onChange={(e) => setSearch(e.target.value)}
                 />
         </div>
-        <div className={classes.toolbar} />  {/*this div is for the height between the navbar and the products */}
+        <div className={classes.toolbar} />  {/*this div is for the height between the search bar and the products */}
         <Grid container justify="center" spacing={4}>
             {renderProducts.length > 0 
             ? renderProducts
