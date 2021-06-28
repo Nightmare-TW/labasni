@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 function App() {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
-  // const [searchResults, setSearchResults] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   
 
